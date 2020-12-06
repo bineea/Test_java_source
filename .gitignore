@@ -23,6 +23,7 @@ hs_err_pid*
 # 2018-01-14
 # all files in the target directory
 target/
+out/
 
 # 2018-01-14
 # all files about eclipse configuration
