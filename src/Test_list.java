@@ -1,8 +1,6 @@
-import sun.awt.geom.AreaOp;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Test_list {
 

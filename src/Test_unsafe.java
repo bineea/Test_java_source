@@ -22,15 +22,40 @@ public class Test_unsafe {
     public static void main(String[] args) throws NoSuchFieldException {
 
         int j = 1;
-        System.out.println(j << (31 - Integer.numberOfLeadingZeros(3)));
-        System.out.println(j * 3);
-        System.out.println(j << (31 - Integer.numberOfLeadingZeros(4)));
-        System.out.println(j * 4);
-        System.out.println(j << (31 - Integer.numberOfLeadingZeros(5)));
-        System.out.println(j * 5);
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(3)) = "+(j << (31 - Integer.numberOfLeadingZeros(3))));
+        System.out.println("j * 3 = "+(j * 3));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(4)) = "+(j << (31 - Integer.numberOfLeadingZeros(4))));
+        System.out.println("j * 4 = "+(j * 4));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(5)) = "+(j << (31 - Integer.numberOfLeadingZeros(5))));
+        System.out.println("j * 5 = "+(j * 5));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(6)) = "+(j << (31 - Integer.numberOfLeadingZeros(6))));
+        System.out.println("j * 6 = "+(j * 6));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(7)) = "+(j << (31 - Integer.numberOfLeadingZeros(7))));
+        System.out.println("j * 7 = "+(j * 7));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(8)) = "+(j << (31 - Integer.numberOfLeadingZeros(8))));
+        System.out.println("j * 8 = "+(j * 8));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(10)) = "+(j << (31 - Integer.numberOfLeadingZeros(10))));
+        System.out.println("j * 10 = "+(j * 10));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(10)) = "+(j << (31 - Integer.numberOfLeadingZeros(12))));
+        System.out.println("j * 12 = "+(j * 12));
+        System.out.println("j << (31 - Integer.numberOfLeadingZeros(16)) = "+(j << (31 - Integer.numberOfLeadingZeros(16))));
+        System.out.println("j * 16 = "+(j * 16));
 
 
+        int[] testInt = new int[] {1,2,3};
+        System.out.println("UNSAFE.arrayIndexScale:"+UNSAFE.arrayIndexScale(testInt.getClass()));
+        String[] testString = new String[] {"111","222","333"};
+        System.out.println("UNSAFE.arrayIndexScale:"+UNSAFE.arrayIndexScale(testString.getClass()));
+        long[] testLong = new long[] {1L,2L,3L};
+        System.out.println("UNSAFE.arrayIndexScale:"+UNSAFE.arrayIndexScale(testLong.getClass()));
 
+        class testInner {
+            private int x = 0;
+            private long y = 0L;
+        }
+
+        testInner[] testInners = new testInner[]{new testInner()};
+        System.out.println("UNSAFE.arrayIndexScale:"+UNSAFE.arrayIndexScale(testLong.getClass()));
         /*内部类
         final Test_unsafe test_unsafe = new Test_unsafe();
         class Test_inner {
